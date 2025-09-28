@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nad Press - Salon d'onglerie</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(255,228,225,0.9) 0%, rgba(255,240,245,0.95) 100%);
+        }
+
+        .gold-text {
+            background: linear-gradient(90deg, #D4AF37 0%, #F9D423 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-link:hover {
+            background: linear-gradient(90deg, #D4AF37 0%, #F9D423 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold gold-text">NadPress</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium hover:text-gray-900 transition">Accueil</a>
+                        <a href="#about" class="nav-link px-3 py-2 text-sm font-medium hover:text-gray-900 transition">À propos</a>
+                        <a href="#services" class="nav-link px-3 py-2 text-sm font-medium hover:text-gray-900 transition">Services</a>
+                        <a href="#gallery" class="nav-link px-3 py-2 text-sm font-medium hover:text-gray-900 transition">Galerie</a>
+                        <a href="#testimonials" class="nav-link px-3 py-2 text-sm font-medium hover:text-gray-900 transition">Avis</a>
+                        <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium hover:text-gray-900 transition">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-md md:hidden">
+        <div class="flex flex-col items-center justify-center h-full space-y-8">
+            <button id="menu-close" class="absolute top-6 right-6 text-gray-600 hover:text-gray-900">
+                <i data-feather="x"></i>
+            </button>
+            <a href="#home" class="text-xl font-medium hover:text-gray-900 transition">Accueil</a>
+            <a href="#about" class="text-xl font-medium hover:text-gray-900 transition">À propos</a>
+            <a href="#services" class="text-xl font-medium hover:text-gray-900 transition">Services</a>
+            <a href="#gallery" class="text-xl font-medium hover:text-gray-900 transition">Galerie</a>
+            <a href="#testimonials" class="text-xl font-medium hover:text-gray-900 transition">Avis</a>
+            <a href="#contact" class="text-xl font-medium hover:text-gray-900 transition">Contact</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-16 md:pt-32 md:pb-24 hero-gradient min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 font-serif">
+                        <span class="gold-text">Élégance</span> au bout <br>des <span class="gold-text">doigts</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 text-gray-700">
+                        Découvrez l'art de la beauté des ongles mains et pieds dans notre salon exclusif. Soins complets pour vos mains et pieds, designs uniques et un savoir-faire exceptionnel.
+                    </p>
+<a href="#contact" class="inline-block bg-gradient-to-r from-pink-400 to-pink-500 text-white px-8 py-3 rounded-full font-medium hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        Prendre rendez-vous
+                    </a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-pink-300 to-pink-200 rounded-3xl blur-lg opacity-75"></div>
+                    <img src="1.jpg" alt="Soin complet des ongles mains et pieds" class="relative rounded-3xl shadow-2xl w-full h-auto">
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">
+                    <span class="gold-text">À propos</span> de nous
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-300 to-pink-500 mx-auto"></div>
+            </div>
+            <div class="md:flex items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <img src="2.jpg" alt="Salon professionnel pour ongles mains et pieds" class="rounded-3xl shadow-lg w-full h-auto">
+</div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-bold mb-6 gold-text font-serif">Notre histoire</h3>
+                    <p class="text-gray-700 mb-6">
+                        Fondé en 2018, NadPress est bien plus qu'un simple salon d'onglerie. C'est un espace dédié à l'art et au bien-être, où chaque client est traité comme une reine.
+                    </p>
+                    <p class="text-gray-700 mb-6">
+                        Notre équipe de professionnelles passionnées se tient à jour des dernières tendances et techniques pour vous offrir une expérience inégalée.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-8 w-8 rounded-full bg-pink-100 text-pink-600">
+                                    <i data-feather="check" class="h-4 w-4"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700">Matériaux de qualité premium</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-8 w-8 rounded-full bg-pink-100 text-pink-600">
+                                    <i data-feather="check" class="h-4 w-4"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700">Hygiène irréprochable</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 mt-1">
+                                <div class="flex items-center justify-center h-8 w-8 rounded-full bg-pink-100 text-pink-600">
+                                    <i data-feather="check" class="h-4 w-4"></i>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <p class="text-gray-700">Service personnalisé</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">
+                    Nos <span class="gold-text">services</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-300 to-pink-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-pink-100 text-pink-600 mb-6">
+                        <i data-feather="sparkles" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Pose de gel</h3>
+                    <p class="text-gray-600 mb-4">Ongles résistants et brillants qui durent jusqu'à 3 semaines.</p>
+                    <p class="text-2xl font-bold gold-text">À partir de 45€</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-pink-100 text-pink-600 mb-6">
+                        <i data-feather="droplet" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Vernis semi-permanent</h3>
+                    <p class="text-gray-600 mb-4">Couleur éclatante qui tient jusqu'à 2 semaines sans écaillage.</p>
+                    <p class="text-2xl font-bold gold-text">À partir de 30€</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-pink-100 text-pink-600 mb-6">
+                        <i data-feather="pen-tool" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Nail art</h3>
+                    <p class="text-gray-600 mb-4">Designs uniques et personnalisés pour sublimer vos ongles.</p>
+                    <p class="text-2xl font-bold gold-text">À partir de 10€</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition duration-300">
+                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-pink-100 text-pink-600 mb-6">
+                        <i data-feather="heart" class="h-6 w-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Manucure complète</h3>
+                    <p class="text-gray-600 mb-4">Soin complet des mains et ongles avec massage relaxant.</p>
+                    <p class="text-2xl font-bold gold-text">À partir de 35€</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">
+                    Notre <span class="gold-text">galerie</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-300 to-pink-500 mx-auto"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Image 1 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="3.jpg"  alt="Pédicure luxe" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white font-medium">Design floral</h3>
+                    </div>
+                </div>
+                <!-- Image 2 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="4.jpg" alt="Soin des pieds professionnel" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white font-medium">Français classique</h3>
+                    </div>
+                </div>
+                <!-- Image 3 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="5.jpg" alt="Vernis pieds été" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white font-medium">Effet nacré</h3>
+                    </div>
+                </div>
+                <!-- Image 4 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="6.jpg" alt="Design ongles de pieds" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white font-medium">Touches dorées</h3>
+                    </div>
+                </div>
+                <!-- Image 5 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="7.jpg" alt="Pédicure médical" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white font-medium">Rouge passion</h3>
+                    </div>
+                </div>
+                <!-- Image 6 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="8.jpg" alt="Soin des ongles de pieds" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white font-medium">Ton pastel</h3>
+                    </div>
+                </div>
+                <!-- Image 7 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="9.jpg" alt="Pédicure spa" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white font-medium">Design géométrique</h3>
+                    </div>
+                </div>
+                <!-- Image 8 -->
+                <div class="relative group overflow-hidden rounded-xl shadow-md">
+                    <img src="10.jpg" alt="Ongles de pieds décorés" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition duration-300">
+                        <h3 class="text-white font-medium">Effet paillettes</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-pink-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">
+                    Témoignages <span class="gold-text">clients</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-300 to-pink-500 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-2xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                        <img src="http://static.photos/people/200x200/111" alt="Sophie M." class="h-12 w-12 rounded-full object-cover">
+</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Sophie M.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Je suis fidèle à NadPress depuis 2 ans. Leur travail est toujours impeccable et leurs conseils avisés. Mes ongles n'ont jamais été aussi beaux !"
+                    </p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-2xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                        <img src="http://static.photos/people/200x200/112" alt="Clara L." class="h-12 w-12 rounded-full object-cover">
+</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Clara L.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Un moment de détente exceptionnel. Les techniciennes sont à l'écoute et très douées. J'adore les designs créatifs qu'elles proposent !"
+                    </p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-8 rounded-2xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="flex-shrink-0">
+                        <img src="http://static.photos/people/200x200/113" alt="Émilie D." class="h-12 w-12 rounded-full object-cover">
+</div>
+                        <div class="ml-4">
+                            <h4 class="font-bold">Émilie D.</h4>
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4 fill-current"></i>
+                                <i data-feather="star" class="h-4 w-4"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        "Super salon très propre et professionnel. Mon vernis semi-permanent tient parfaitement 3 semaines. Je recommande vivement !"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 font-serif">
+                    Nous <span class="gold-text">contacter</span>
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-pink-300 to-pink-500 mx-auto"></div>
+            </div>
+            <div class="md:flex">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h3 class="text-xl font-bold mb-6">Prendre rendez-vous</h3>
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service souhaité</label>
+                            <select id="service" name="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500">
+                                <option value="">Sélectionnez un service</option>
+                            <option value="gel-mains">Pose de gel mains</option>
+                            <option value="gel-pieds">Pose de gel pieds</option>
+                            <option value="semi-permanent-mains">Vernis semi-permanent mains</option>
+                            <option value="semi-permanent-pieds">Vernis semi-permanent pieds</option>
+                            <option value="nail-art-mains">Nail art mains</option>
+                            <option value="nail-art-pieds">Nail art pieds</option>
+                            <option value="manucure">Manucure complète</option>
+                            <option value="pedicure">Pédicure complète</option>
+                            <option value="soin-complet">Soin complet mains & pieds</option>
+<option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-pink-400 to-pink-500 text-white px-6 py-3 rounded-lg font-medium hover:shadow-lg transition duration-300">
+                            Envoyer la demande
+                        </button>
+                    </form>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-pink-50 rounded-2xl p-8 h-full">
+                        <h3 class="text-xl font-bold mb-6">Nos coordonnées</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-full bg-pink-100 text-pink-600">
+                                        <i data-feather="map-pin" class="h-5 w-5"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-gray-900">Adresse</h4>
+                                    <p class="text-gray-700">12 Rue des Étoiles, 75008 Paris</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-full bg-pink-100 text-pink-600">
+                                        <i data-feather="phone" class="h-5 w-5"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-gray-900">Téléphone</h4>
+                                    <p class="text-gray-700">01 23 45 67 89</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-full bg-pink-100 text-pink-600">
+                                        <i data-feather="mail" class="h-5 w-5"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-gray-900">Email</h4>
+                                    <p class="text-gray-700">contact@NadPress.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 mt-1">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-full bg-pink-100 text-pink-600">
+                                        <i data-feather="clock" class="h-5 w-5"></i>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-medium text-gray-900">Horaires</h4>
+                                    <p class="text-gray-700">Mardi au Samedi: 10h - 19h</p>
+                                    <p class="text-gray-700">Dimanche et Lundi: Fermé</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-900 mb-4">Suivez-nous</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="h-10 w-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center hover:bg-pink-200 transition">
+                                    <i data-feather="instagram" class="h-5 w-5"></i>
+                                </a>
+                                <a href="#" class="h-10 w-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center hover:bg-pink-200 transition">
+                                    <i data-feather="facebook" class="h-5 w-5"></i>
+                                </a>
+                                <a href="#" class="h-10 w-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center hover:bg-pink-200 transition">
+                                    <i data-feather="twitter" class="h-5 w-5"></i>
+                                </a>
+                                <a href="#" class="h-10 w-10 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center hover:bg-pink-200 transition">
+                                    <i data-feather="pinterest" class="h-5 w-5"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold gold-text mb-4">NadPress</h3>
+                    <p class="text-gray-400 max-w-md">
+                        Votre salon d'onglerie exclusif à Paris. Des services haut de gamme pour des ongles parfaits.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Navigation</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#home" class="text-gray-400 hover:text-white transition">Accueil</a></li>
+                            <li><a href="#about" class="text-gray-400 hover:text-white transition">À propos</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                            <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Galerie</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Services</h4>
+                        <ul class="space-y-2">
+                                <li><a href="#" class="text-gray-400 hover:text-white transition">Pose de gel mains</a></li>
+                                <li><a href="#" class="text-gray-400 hover:text-white transition">Pose de gel pieds</a></li>
+                                <li><a href="#" class="text-gray-400 hover:text-white transition">Vernis semi-permanent mains</a></li>
+                                <li><a href="#" class="text-gray-400 hover:text-white transition">Vernis semi-permanent pieds</a></li>
+                                <li><a href="#" class="text-gray-400 hover:text-white transition">Nail art mains</a></li>
+                                <li><a href="#" class="text-gray-400 hover:text-white transition">Nail art pieds</a></li>
+                                <li><a href="#" class="text-gray-400 hover:text-white transition">Manucure</a></li>
+                                <li><a href="#" class="text-gray-400 hover:text-white transition">Pédicure</a></li>
+</ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold uppercase tracking-wider mb-4">Légal</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Mentions légales</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">CGV</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Politique de confidentialité</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800">
+                <div class="md:flex md:items-center md:justify-between">
+                    <div class="text-center md:text-left">
+                        <p class="text-gray-400 text-sm">
+                            &copy; 2025 NadPress. Tous droits réservés.
+                        </p>
+                    </div>
+                    <div class="mt-4 md:mt-0">
+                        <p class="text-gray-400 text-sm">
+                            Conçu avec <i data-feather="heart" class="h-3 w-3 inline text-pink-500"></i> à Paris
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+        
+        menuClose.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Here you would normally send the form data to a server
+            // For demo purposes, we'll just show an alert
+            alert('Merci pour votre message ! Nous vous contacterons très rapidement.');
+            
+            // Reset the form
+            contactForm.reset();
+        });
+
+        // Initialize feather icons
+        feather.replace();
+    </script>
+</body>
+</html>
